@@ -1,0 +1,8 @@
+-Interface Web 3D para que o utilizador possa interagir com o produto de uma forma mais realista;
+-Dar ao utilizador opções tais como:
+	-Mudar cor;
+	-Abrir/Fechar Gavetas;
+	-Rodar;
+	-Muda texturas;
+-Uma página de listagem dos produtos de uma determinada categoria;
+-Manuais e pop-ups de ajuda em tarefas que possam parecer mais onerosas;

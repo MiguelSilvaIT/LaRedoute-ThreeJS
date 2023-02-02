@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Projeto prático Avaliação SGI</title>
+    <style>
+        body {
+            overflow: hidden;
+            margin: 0;
+        }
+        .col-sm-4{
+            display: none !important;
+        }
+        .col-sm-4.show{
+            display: block !important;
+        }
+    </style>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div>
+        <div class="container-1 wmed">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="laredoute.png" alt="" class="img" style="width: 80px;">
+                </a>
+            </div>
+            <div class="menu-holder">
+                <ul class="menu"> 
+                    <li>Móvel</li>  
+                    <li>Moda</li>    
+                    <li>Natal</li>    
+                </ul>                     
+            </div>
+        </div>
+    </div>
+
+    <div id="myBtnContainer">
+        <button class="btn active" onclick="filterSelection('all')"> Todos</button>
+        <button class="btn" onclick="filterSelection('cama')"> Cama</button>
+        <button class="btn" onclick="filterSelection('mesa')"> Mesa de Cabeceira</button>
+        <button class="btn" onclick="filterSelection('comoda')"> Cómoda</button>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-4 cama">
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="cama.jpg" alt="Cama">
+                    <div class="card-body">
+                        <p class="card-text" style="text-align: center;">Cama de Casal<br>400€</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4 mesa">
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="mesa_cabeceira.jpg" alt="Mesa Cbeceira">
+                    <div class="card-body">
+                        <p class="card-text" style="text-align: center;">Mesa de Cabeceira<br>120€</p>
+                    </div>
+                </div>
+            </div> 
+                <div class="col-sm-4 comoda">
+                <a href="movel.html" style="color: black; text-decoration: none;"><div class="card" style="width: 18rem;">
+                        <img class="card-img-top" src="movelTV.jpg" alt="Movel">
+                        <div class="card-body">
+                            <p class="card-text" style="text-align: center;">Móvel para TV<br>95€</p>
+                        </div>
+                    </div>
+                </div></a>
+            </div> 
+            </div>
+    </div>
+
+    <script>
+        filterSelection("all")
+        function filterSelection(c) {
+          var x, i;
+          x = document.getElementsByClassName("col-sm-4");
+          if (c == "all") c = "";
+          for (i = 0; i < x.length; i++) {
+            w3RemoveClass(x[i], "show");
+            if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+          }
+        }
+        
+        function w3AddClass(element, name) {
+          var i, arr1, arr2;
+          arr1 = element.className.split(" ");
+          arr2 = name.split(" ");
+          for (i = 0; i < arr2.length; i++) {
+            if (arr1.indexOf(arr2[i]) == -1) {element.className += " " + arr2[i];}
+          }
+        }
+        
+        function w3RemoveClass(element, name) {
+          var i, arr1, arr2;
+          arr1 = element.className.split(" ");
+          arr2 = name.split(" ");
+          for (i = 0; i < arr2.length; i++) {
+            while (arr1.indexOf(arr2[i]) > -1) {
+              arr1.splice(arr1.indexOf(arr2[i]), 1);     
+            }
+          }
+          element.className = arr1.join(" ");
+        }
+        
+        // Add active class to the current button (highlight it)
+        var btnContainer = document.getElementById("myBtnContainer");
+        var btns = btnContainer.getElementsByClassName("btn");
+        for (var i = 0; i < btns.length; i++) {
+          btns[i].addEventListener("click", function(){
+            var current = document.getElementsByClassName("active");
+            current[0].className = current[0].className.replace(" active", "");
+            this.className += " active";
+          });
+        }
+        </script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</body>
+</html>

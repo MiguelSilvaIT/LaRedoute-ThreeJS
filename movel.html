@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Manipular Objetos (html)</title>
+    <style>
+        body {
+            overflow: hidden;
+            margin: 0;
+        }
+        .tab4 {
+            tab-size: 8;
+        }
+    </style>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div>
+        <div class="container-1 wmed">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="laredoute.png" alt="" class="img" style="width: 80px;">
+                </a>
+            </div>
+            <div class="menu-holder">
+                <ul class="menu"> 
+                    <li>Móvel</li>  
+                    <li>Moda</li>    
+                    <li>Natal</li>    
+                </ul>                     
+            </div>
+        </div>
+    </div>
+    
+    <div style="display: flex; padding-left: 50px; padding-top: 80px;">
+        <div>
+            <canvas id="meuCanvas">
+                
+            </canvas>
+        </div>
+
+        <div style="padding-top: 20px;">
+            <div style="padding-left: 90px;" >
+                <h1 class="titulo"><b>Móvel para TV Personalizável</b></h1>
+                <p class="preco">95€</p>
+            </div>
+            <form style = "padding: 10px 0px 0px 90px;">
+                <p class="texto">Mude a cor do móvel</p>
+                <input type="color" value="" id="btn_cor" style="
+                border-radius: 5px;
+                border: 2px solid black;
+                height: 30px;
+                font-weight: bold;
+                background-color: #d8cecf">
+            </form> 
+            
+            <div style="padding: 10px 0px 0px 90px;">
+                <p class="texto">Altere a textura do móvel</p>
+                <button id="btn_top_material"></button>
+                <button id="btn_top_material2"></button><br>
+                <div style="padding-top: 10px;">
+                    <button id="btn_repor">Repor material</button>
+                    <div class="help-tip">
+                        <p>Carregar nas gavetas/portas para abrir/fechar</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+
+    
+    <script src="/node_modules/three/build/three.min.js"></script>
+    <script src="/node_modules/three/examples/js/loaders/GLTFLoader.js"></script>
+    <script src="/node_modules/three/examples/js/controls/OrbitControls.js"></script>
+
+    
+    <script src="main.js"></script>
+</body>
+</html>
